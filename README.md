@@ -37,3 +37,4 @@ When "YES, MARDHAL ❤️" is clicked, the website sends:
 
 ## Important
 Do not put a private email password, API secret, or SMTP password in `script.js`.
+website
