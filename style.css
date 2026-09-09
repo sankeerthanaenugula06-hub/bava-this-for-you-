@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink: #ff3f81;
+  --dark-pink: #d9165b;
+  --soft: #fff0f6;
+  --text: #4a1830;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.9), transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(255,190,215,.55), transparent 30%),
+    linear-gradient(135deg, #ffd7e7, #fff5f8 45%, #ffc6dc);
+}
+
+#hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -40px;
+  font-size: 22px;
+  opacity: .65;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+}
+
+.page.active {
+  display: flex;
+  animation: pageIn .65s ease both;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: scale(.96) translateY(15px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.card {
+  width: min(92vw, 650px);
+  padding: 45px 30px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 32px;
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 25px 80px rgba(120, 20, 60, .18);
+}
+
+.emoji, .ring {
+  font-size: 55px;
+  margin-bottom: 10px;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.1); }
+}
+
+.tiny {
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: .75;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(52px, 13vw, 92px);
+  color: var(--dark-pink);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: clamp(27px, 6vw, 45px);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.quote {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 auto 28px;
+  max-width: 500px;
+}
+
+.sub {
+  opacity: .8;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.primary {
+  color: white;
+  background: linear-gradient(135deg, #ff3f81, #d9165b);
+  box-shadow: 0 10px 25px rgba(217, 22, 91, .28);
+}
+
+.secondary {
+  color: var(--dark-pink);
+  background: white;
+  border: 2px solid #ffb2cc;
+}
+
+.choices {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mingle-message {
+  min-height: 25px;
+  margin-top: 18px;
+  color: var(--dark-pink);
+  font-weight: 600;
+}
+
+.proposal-card {
+  padding-top: 35px;
+  padding-bottom: 42px;
+}
+
+.proposal {
+  font-size: clamp(37px, 9vw, 76px);
+  font-weight: 800;
+  color: #d9165b;
+  text-shadow: 0 4px 20px rgba(217,22,91,.18);
+  margin: 14px 0 20px;
+}
+
+.yes {
+  font-size: 18px;
+  padding: 17px 32px;
+  animation: glow 1.6s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 8px 25px rgba(255,63,129,.25); }
+  to { box-shadow: 0 8px 45px rgba(255,63,129,.65); }
+}
+
+.success-text {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.big-heart {
+  font-size: 70px;
+  animation: pulse .9s infinite;
+}
+
+.email-note {
+  margin-top: 15px;
+  font-size: 12px;
+  opacity: .6;
+}
+
+@media (max-width: 480px) {
+  .card { padding: 35px 20px; }
+  .quote { font-size: 15px; }
+  button { width: min(280px, 85vw); }
+  .choices { flex-direction: column; align-items: center; }
+}
+
+
+.proposal-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.no {
+  transition: transform .25s ease;
+}
+
+#noMessage {
+  margin-top: 15px;
+}

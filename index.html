@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Bava ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hearts"></div>
+
+  <main>
+    <!-- PAGE 1 -->
+    <section class="page active" id="page1">
+      <div class="card">
+        <div class="emoji">💌</div>
+        <p class="tiny">A little surprise for you...</p>
+        <h1>Welcome Bava 🫶</h1>
+        <p class="quote">“Some people make ordinary moments feel like forever.” ❤️</p>
+        <button class="primary" onclick="goToPage(2)">Next 💕</button>
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+      <div class="card">
+        <div class="emoji">🥹❤️</div>
+        <p class="tiny">Bava... one tiny question</p>
+        <h2>Are you Single or Mingle?</h2>
+        <p class="sub">Choose carefully... 😌</p>
+        <div class="choices">
+          <button class="primary" onclick="goToPage(3)">Single 💗</button>
+          <button class="secondary" id="mingleBtn" onclick="mingleClicked()">Mingle 😜</button>
+        </div>
+        <p id="mingleMessage" class="mingle-message"></p>
+      </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page" id="page3">
+      <div class="card proposal-card">
+        <div class="ring">💍</div>
+        <p class="tiny">There is something I've been wanting to ask...</p>
+        <h2 class="proposal">WILL YOU<br>MARRY ME, BAVA!!?</h2>
+        <p class="sub">I want you beside me for all my tomorrows. 🥹❤️</p>
+        <div class="proposal-buttons">
+          <button class="primary yes" onclick="acceptProposal()">YES, MARDHAL ❤️</button>
+          <button class="secondary no" id="noBtn" onclick="noClicked()">NO 😭</button>
+        </div>
+        <p id="noMessage" class="mingle-message"></p>
+      </div>
+    </section>
+
+    <!-- SUCCESS -->
+    <section class="page" id="success">
+      <div class="card">
+        <div class="emoji">💍🥹❤️</div>
+        <h1>YAYYYY!!</h1>
+        <p class="success-text">You just made me the happiest person! 🫶</p>
+        <p class="quote">“Our forever starts with this one beautiful YES.”</p>
+        <div class="big-heart">❤️</div>
+        <p class="email-note" id="emailStatus"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
